@@ -1,0 +1,33 @@
+{
+  "body": {
+    "job_id": "demo",
+    "cmd": [
+      "/bin/sh",
+      "-c",
+      "cat /etc/hostname >/dev/null; \\\n        exec 3<>/dev/tcp/10.9.9.2/9999 && echo hello >&3 && head -1 <&3; \\\n        (cat /sys/kernel/hostname) 2>/dev/null; \\\n        (exec 4<>/dev/tcp/10.9.9.2/8888) 2>/dev/null; true"
+    ],
+    "policy": {
+      "allow_paths": [
+        "/usr",
+        "/lib",
+        "/etc",
+        "/tmp",
+        "/proc",
+        "/dev"
+      ],
+      "flag_paths": [
+        "/home"
+      ],
+      "allow_connects": [
+        "10.9.9.2:9999"
+      ],
+      "allow_flows": [
+        "10.9.9.2:9999/tcp"
+      ],
+      "flag_iouring": true,
+      "enforce_block": true
+    }
+  },
+  "pubkey_hex": "7cd8d0bd979d437802e025f8b721d9c49afea6396998f8588891bd670c361b97",
+  "signature_hex": "e9003cba0f2936999268d662eb38ed1bbc6f6727b86063a063900bbbe5badfb24a00f7d77d0e5ec5a7d07c82beed34671437480af7165580b2342c9a86719607"
+}

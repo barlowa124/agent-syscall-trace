@@ -1,0 +1,3 @@
+flow hashing: 200000 frames in 37.919428ms (5274341 frames/s)
+syscall stops: 2.35619ms untraced vs 18.194571ms traced over 10 rounds
+per-syscall-stop overhead ~79.2 us
