@@ -58,7 +58,7 @@ From `results/` on this machine (Rust 1.99.1, Linux x86-64, <!-- deslop-disable-
 | Metric | Value | Artifact |
 | --- | --- | --- |
 | Integration tests | 9 passed | `cargo test` run |
-| Receipt entries in demo run | 42 | `results/receipts.jsonl` |
+| Receipt entries in demo run | 80 (70 events, 9 checkpoints, 1 closing receipt) | `results/receipts.jsonl` | <!-- deslop-disable-line magic-number -->
 | Events: exec/openat/fork/socket/connect/exit/flow/netcap | 4 / 49 / 4 / 2 / 3 / 5 / 2 / 1 | `results/receipts.jsonl` | <!-- deslop-disable-line magic-number -->
 | Clean chain verify | `OK: chain intact` | `results/verify.txt` |
 | Tampered chain verify | `FAIL` hash mismatch at 3 lines | `results/verify_tampered.txt` |
